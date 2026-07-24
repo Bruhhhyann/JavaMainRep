@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * @author CL2-PC
  */
-public class Bryan123 {
+public class Bryan_RPS {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
