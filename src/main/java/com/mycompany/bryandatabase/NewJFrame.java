@@ -69,8 +69,10 @@ Connection conn;
         char[] pass = txt_password.getPassword();
         String userpassword = String.valueOf(pass);
         
+        
         try{
         String sqlquery = "Select * From Table1 WHERE Username = ? and Password = ?";
+        
         pst = conn.prepareStatement(sqlquery);
         pst.setString(1,username);
         pst.setString(2, userpassword);

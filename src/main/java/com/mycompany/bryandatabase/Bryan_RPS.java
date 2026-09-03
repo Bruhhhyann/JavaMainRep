@@ -12,6 +12,8 @@ public class Bryan_RPS {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        
+        
         System.out.println("[1] Rock");
         System.out.println("[2] Paper");
         System.out.println("[3] Scissor");
@@ -35,7 +37,7 @@ public class Bryan_RPS {
         }
         else if (p1 ==2 && p2 ==2){
             System.out.println("Draw");
-            
+           
         }
         else if (p1 ==2 && p2 ==3){
             System.out.println("Player 2 Wins");
