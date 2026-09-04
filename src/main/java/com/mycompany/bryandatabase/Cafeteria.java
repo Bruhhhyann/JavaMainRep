@@ -21,6 +21,15 @@ public class Cafeteria extends javax.swing.JFrame {
         jPanel4.setVisible(false);
         txtNova.setVisible(false);
         txPiatos.setVisible(false);
+        txtsnacks.setVisible(false);
+        txtdrinks.setVisible(false);
+        txtcoke.setVisible(false);
+        txtroyal.setVisible(false);
+              txtCoke.setVisible(false);
+        txtRoyal.setVisible(false);
+        
+        txtpiatos.setVisible(false);
+        txtnov.setVisible(false);
     }
 
     /**
@@ -39,9 +48,9 @@ public class Cafeteria extends javax.swing.JFrame {
         jtext1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        txtsnacks = new javax.swing.JLabel();
+        txtnov = new javax.swing.JLabel();
+        txtpiatos = new javax.swing.JLabel();
         jtext12 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
@@ -54,6 +63,11 @@ public class Cafeteria extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         txt13 = new javax.swing.JLabel();
         txPiatos = new javax.swing.JLabel();
+        txtCoke = new javax.swing.JLabel();
+        txtRoyal = new javax.swing.JLabel();
+        txtdrinks = new javax.swing.JLabel();
+        txtcoke = new javax.swing.JLabel();
+        txtroyal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -78,17 +92,17 @@ public class Cafeteria extends javax.swing.JFrame {
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel8.setText("You chose Snacks");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+        txtsnacks.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtsnacks.setText("You chose Snacks");
+        jPanel4.add(txtsnacks, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel9.setText("[2] Nova P35.00");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+        txtnov.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtnov.setText("[2] Nova P35.00");
+        jPanel4.add(txtnov, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel10.setText("[1] Piatos P25.00");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+        txtpiatos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtpiatos.setText("[1] Piatos P25.00");
+        jPanel4.add(txtpiatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
         jPanel4.add(jtext12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 110, 30));
 
         jButton5.setText("Select");
@@ -119,7 +133,7 @@ public class Cafeteria extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+        jPanel5.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 110, -1));
         jPanel5.add(jtext5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 110, 30));
 
         jButton7.setText("Show Subtotal");
@@ -129,43 +143,65 @@ public class Cafeteria extends javax.swing.JFrame {
             }
         });
         jPanel5.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
-        jPanel5.add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 90, 30));
+
+        txt13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel5.add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 50, 30));
 
         txPiatos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txPiatos.setText("You Chose Piatos");
         jPanel5.add(txPiatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, -1, -1));
 
+        txtCoke.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtCoke.setText("You Chose Coke");
+        jPanel5.add(txtCoke, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, -1, -1));
+
+        txtRoyal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtRoyal.setText("You Chose Royal");
+        jPanel5.add(txtRoyal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, -1, -1));
+
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 380, 260));
+
+        txtdrinks.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtdrinks.setText("You chose Drinks");
+        jPanel4.add(txtdrinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+
+        txtcoke.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtcoke.setText("[1] Coke P20.00");
+        jPanel4.add(txtcoke, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+
+        txtroyal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtroyal.setText("[2] Royal P25.00");
+        jPanel4.add(txtroyal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txt1)
-                        .addComponent(txt2)
-                        .addComponent(jtext1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(20, 20, 20)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(112, 112, 112)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt1)
+                                .addComponent(txt2)
+                                .addComponent(jtext1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(20, 20, 20)))
+                        .addGap(52, 52, 52)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(60, 60, 60))
+                        .addGap(387, 387, 387)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txt1)
@@ -176,10 +212,10 @@ public class Cafeteria extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 600));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -190,12 +226,23 @@ public class Cafeteria extends javax.swing.JFrame {
         if (tx1 == 1) {
             
             jPanel4.setVisible(true);
+            txtsnacks.setVisible(true);
+            txtdrinks.setVisible(false);
+            txtcoke.setVisible(false);
+            txtroyal.setVisible(false);
+                    txtpiatos.setVisible(true);
+        txtnov.setVisible(true);
             
         }
         else if (tx1 ==2) {
             jPanel4.setVisible(true);
-            
-            
+            txtsnacks.setVisible(false);
+            txtdrinks.setVisible(true);
+            txtcoke.setVisible(true);
+            txtroyal.setVisible(true);
+                    txtpiatos.setVisible(false);
+        txtnov.setVisible(false);
+        
         }
         
 
@@ -203,16 +250,50 @@ public class Cafeteria extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
         jPanel4.setVisible(true);
-        int as = Integer.parseInt(jtext12.getText());
+    String choiceInput = jtext12.getText().trim();
+
+if (choiceInput.isEmpty() || !choiceInput.matches("\\d+")) {
+    JOptionPane.showMessageDialog(this, "Please enter a valid numeric item choice.", "Input Error", JOptionPane.ERROR_MESSAGE);
+} else {
+    int as = Integer.parseInt(choiceInput);
+
+    // 2. Process Snacks Selection
+    if (txtsnacks.isVisible()) {
         if (as == 1) {
             txPiatos.setVisible(true);
             txtNova.setVisible(false);
-        }
-        else if (as == 2){
+            txtCoke.setVisible(false);
+            txtRoyal.setVisible(false);
+        } else if (as == 2) {
             txtNova.setVisible(true);
             txPiatos.setVisible(false);
+            txtCoke.setVisible(false);
+            txtRoyal.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid snack choice. Please enter 1 or 2.", "Selection Error", JOptionPane.WARNING_MESSAGE);
         }
+    } 
+
+    else if (txtdrinks.isVisible()) {
+        if (as == 1) {
+            txtCoke.setVisible(true);
+            txtRoyal.setVisible(false);
+            txtNova.setVisible(false);
+            txPiatos.setVisible(false);
+        } else if (as == 2) {
+            txtCoke.setVisible(false);
+            txtRoyal.setVisible(true);
+            txtNova.setVisible(false);
+            txPiatos.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid drink choice. Please enter 1 or 2.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+}
+   
+    
             
         
 
@@ -221,27 +302,86 @@ public class Cafeteria extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       int price = 0;
-            if (txPiatos.isVisible()) {
-                 price = 25;
-            } else if (txtNova.isVisible()) {
-                 price = 35;
-            }
-        int quan = Integer.parseInt(jtext3.getText());
-        int cash = Integer.parseInt(jtext5.getText());
-        
-       int total = price * quan;
+     int price = 0;
+if (txPiatos.isVisible()) {
+    price = 25;
+} 
+else if (txtNova.isVisible()) {
+    price = 35;
+}
+else if (txtCoke.isVisible()) {
+    price = 20;
+}
+else if (txtRoyal.isVisible()) {
+    price = 25;
+}
 
-            if (cash < total) {
-                JOptionPane.showMessageDialog(this, String.format("Insufficient cash! Total is P%.2f", total), "Payment Error", JOptionPane.WARNING_MESSAGE);
-            } else {
-                double change = cash - total;
-                JOptionPane.showMessageDialog(this, String.format("Payment Successful! Change: P%.2f", change));
-                
-                
-                jtext3.setText("");
-                jtext5.setText("");
-            }
+else {
+    JOptionPane.showMessageDialog(this, "Please select an item first.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+    return;
+}
+
+String quanText = jtext3.getText().trim();
+if (quanText.isEmpty() || !quanText.matches("\\d+")) {
+    JOptionPane.showMessageDialog(this, "Please enter a valid positive quantity.", "Input Error", JOptionPane.ERROR_MESSAGE);
+    return;
+}
+
+int quan = Integer.parseInt(quanText);
+double total = price * quan;
+
+String cashInput = jtext5.getText().trim();
+boolean paymentComplete = false;
+
+while (!paymentComplete) {
+
+    if (cashInput.isEmpty()) {
+        cashInput = JOptionPane.showInputDialog(this, 
+            String.format("Total is P%.2f. Please enter cash amount:", total), 
+            "Enter Payment", 
+            JOptionPane.QUESTION_MESSAGE);
+
+
+        if (cashInput == null) {
+            return;
+        }
+        cashInput = cashInput.trim();
+    }
+
+ 
+    if (!cashInput.matches("\\d+(\\.\\d+)?")) {
+        JOptionPane.showMessageDialog(this, "Invalid amount. Please enter a valid number.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        cashInput = ""; 
+        continue;
+    }
+
+    double cash = Double.parseDouble(cashInput);
+
+
+    if (cash < total) {
+        JOptionPane.showMessageDialog(this, 
+            String.format("Insufficient cash! \nTotal is P%.2f. \nYou provided P%.2f. \nPlease try again.", total, cash), 
+            "Payment Error", 
+            JOptionPane.WARNING_MESSAGE);
+        
+        cashInput = "";
+        jtext5.setText(""); 
+    } else {
+     
+        double change = cash - total;
+        JOptionPane.showMessageDialog(this, 
+            String.format("Payment Successful!\nTotal: P%.2f\nCash: P%.2f\nChange: P%.2f", total, cash, change), 
+            "Success", 
+            JOptionPane.INFORMATION_MESSAGE);
+
+        jtext3.setText("");
+        jtext5.setText("");
+        txt13.setText("");
+        jtext12.setText("");
+        jtext1.setText("");
+        paymentComplete = true; 
+    }
+}
         
     
 
@@ -261,9 +401,15 @@ public class Cafeteria extends javax.swing.JFrame {
             } else if (txtNova.isVisible()) {
                 price = 35.00;
             }
+              if (txtCoke.isVisible()) {
+                price = 20.00;
+            } else if (txtRoyal.isVisible()) {
+                price = 25.00;
+            }
+            
 
             double subtotal = price * quantity;
-            JOptionPane.showMessageDialog(this, String.format("Subtotal: P%.2f", subtotal));
+            txt13.setText(""+subtotal);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid numeric quantity.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -313,11 +459,8 @@ public class Cafeteria extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -329,6 +472,14 @@ public class Cafeteria extends javax.swing.JFrame {
     private javax.swing.JLabel txt1;
     private javax.swing.JLabel txt13;
     private javax.swing.JLabel txt2;
+    private javax.swing.JLabel txtCoke;
     private javax.swing.JLabel txtNova;
+    private javax.swing.JLabel txtRoyal;
+    private javax.swing.JLabel txtcoke;
+    private javax.swing.JLabel txtdrinks;
+    private javax.swing.JLabel txtnov;
+    private javax.swing.JLabel txtpiatos;
+    private javax.swing.JLabel txtroyal;
+    private javax.swing.JLabel txtsnacks;
     // End of variables declaration//GEN-END:variables
 }
