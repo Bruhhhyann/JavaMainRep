@@ -31,6 +31,12 @@ public class Cafeteria extends javax.swing.JFrame {
         txtpiatos.setVisible(false);
         txtnov.setVisible(false);
     }
+    private double calculateRecursiveTotal(double price, int quantity) {
+        if (quantity <= 0) {
+            return 0.0;
+        }
+        return price + calculateRecursiveTotal(price, quantity - 1);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +48,6 @@ public class Cafeteria extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         txt2 = new javax.swing.JLabel();
         txt1 = new javax.swing.JLabel();
         jtext1 = new javax.swing.JTextField();
@@ -54,7 +59,6 @@ public class Cafeteria extends javax.swing.JFrame {
         jtext12 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        txtNova = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jtext3 = new javax.swing.JTextField();
@@ -62,25 +66,25 @@ public class Cafeteria extends javax.swing.JFrame {
         jtext5 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         txt13 = new javax.swing.JLabel();
-        txPiatos = new javax.swing.JLabel();
-        txtCoke = new javax.swing.JLabel();
         txtRoyal = new javax.swing.JLabel();
+        txtCoke = new javax.swing.JLabel();
+        txPiatos = new javax.swing.JLabel();
+        txtNova = new javax.swing.JLabel();
         txtdrinks = new javax.swing.JLabel();
         txtcoke = new javax.swing.JLabel();
         txtroyal = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 48)); // NOI18N
-        jLabel1.setText("CAFETERIA");
-
-        txt2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txt2.setText("[2] DRINKS");
 
-        txt1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txt1.setText("[1] SNACKS");
 
         jButton1.setText("Select");
@@ -90,6 +94,7 @@ public class Cafeteria extends javax.swing.JFrame {
             }
         });
 
+        jPanel4.setBackground(new java.awt.Color(255, 204, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtsnacks.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -97,12 +102,12 @@ public class Cafeteria extends javax.swing.JFrame {
         jPanel4.add(txtsnacks, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         txtnov.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtnov.setText("[2] Nova P35.00");
-        jPanel4.add(txtnov, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+        txtnov.setText("[2] Cake Roll P65.00");
+        jPanel4.add(txtnov, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
         txtpiatos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtpiatos.setText("[1] Piatos P25.00");
-        jPanel4.add(txtpiatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+        txtpiatos.setText("[1] Dip Cake P105.00");
+        jPanel4.add(txtpiatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
         jPanel4.add(jtext12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 110, 30));
 
         jButton5.setText("Select");
@@ -115,10 +120,6 @@ public class Cafeteria extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(204, 255, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtNova.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtNova.setText("You Chose Nova");
-        jPanel5.add(txtNova, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, -1, -1));
 
         jLabel12.setText("Enter Quantity");
         jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
@@ -147,17 +148,22 @@ public class Cafeteria extends javax.swing.JFrame {
         txt13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPanel5.add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 50, 30));
 
-        txPiatos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txPiatos.setText("You Chose Piatos");
-        jPanel5.add(txPiatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, -1, -1));
+        txtRoyal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtRoyal.setText("You Chose Espresso");
+        jPanel5.add(txtRoyal, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
 
         txtCoke.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtCoke.setText("You Chose Coke");
-        jPanel5.add(txtCoke, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, -1, -1));
+        txtCoke.setText("You Chose Mocha");
+        txtCoke.setToolTipText("");
+        jPanel5.add(txtCoke, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
 
-        txtRoyal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtRoyal.setText("You Chose Royal");
-        jPanel5.add(txtRoyal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, -1, -1));
+        txPiatos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txPiatos.setText("You Chose Dip Cake");
+        jPanel5.add(txPiatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
+
+        txtNova.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtNova.setText("You Chose Cake  Roll");
+        jPanel5.add(txtNova, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 380, 260));
 
@@ -166,44 +172,66 @@ public class Cafeteria extends javax.swing.JFrame {
         jPanel4.add(txtdrinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         txtcoke.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtcoke.setText("[1] Coke P20.00");
-        jPanel4.add(txtcoke, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+        txtcoke.setText("[1] Mocha P70.00");
+        jPanel4.add(txtcoke, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
 
         txtroyal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtroyal.setText("[2] Royal P25.00");
-        jPanel4.add(txtroyal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+        txtroyal.setText("[2] Espresso P125.00");
+        jPanel4.add(txtroyal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(255, 204, 255));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 60)); // NOI18N
+        jLabel1.setText("KANTO AT CAFE");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(186, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txt1)
-                                .addComponent(txt2)
-                                .addComponent(jtext1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(20, 20, 20)))
-                        .addGap(52, 52, 52)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(69, 69, 69)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt2)
+                            .addComponent(jtext1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(387, 387, 387)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(171, Short.MAX_VALUE))
+                        .addGap(94, 94, 94)
+                        .addComponent(jButton1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addComponent(txt1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt2)
@@ -212,10 +240,10 @@ public class Cafeteria extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 600));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -304,16 +332,16 @@ if (choiceInput.isEmpty() || !choiceInput.matches("\\d+")) {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
      int price = 0;
 if (txPiatos.isVisible()) {
-    price = 25;
+    price = 105;
 } 
 else if (txtNova.isVisible()) {
-    price = 35;
+    price = 65;
 }
 else if (txtCoke.isVisible()) {
-    price = 20;
+    price = 70;
 }
 else if (txtRoyal.isVisible()) {
-    price = 25;
+    price = 125;
 }
 
 else {
@@ -328,7 +356,7 @@ if (quanText.isEmpty() || !quanText.matches("\\d+")) {
 }
 
 int quan = Integer.parseInt(quanText);
-double total = price * quan;
+double total = calculateRecursiveTotal(price, quan);
 
 String cashInput = jtext5.getText().trim();
 boolean paymentComplete = false;
@@ -380,8 +408,22 @@ while (!paymentComplete) {
         jtext12.setText("");
         jtext1.setText("");
         paymentComplete = true; 
+        int response = JOptionPane.showConfirmDialog(this, 
+            "Would you like to order again?", 
+            "New Order", 
+            JOptionPane.YES_NO_OPTION, 
+            JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.NO_OPTION) {
+            
+            System.exit(0);
+        }
+      
+
+        paymentComplete = true; 
     }
-}
+
+    }
         
     
 
@@ -397,18 +439,18 @@ while (!paymentComplete) {
             double price = 0;
 
             if (txPiatos.isVisible()) {
-                price = 25.00;
+                price = 105.00;
             } else if (txtNova.isVisible()) {
-                price = 35.00;
+                price = 65.00;
             }
               if (txtCoke.isVisible()) {
-                price = 20.00;
+                price = 70.00;
             } else if (txtRoyal.isVisible()) {
-                price = 25.00;
+                price = 125.00;
             }
             
 
-            double subtotal = price * quantity;
+            double subtotal = calculateRecursiveTotal(price, quantity);
             txt13.setText(""+subtotal);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid numeric quantity.", "Input Error", JOptionPane.ERROR_MESSAGE);
@@ -462,6 +504,7 @@ while (!paymentComplete) {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField jtext1;
